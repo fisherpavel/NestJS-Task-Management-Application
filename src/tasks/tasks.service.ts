@@ -58,16 +58,20 @@ export class TasksService {
         
     }
 
-    // async updateTaskStatus(id: number, status: TaskStatus): Promise<Task>{
+    async updateTaskStatus(
+        id: number,
+        status: TaskStatus,
+        user: User 
+         ): Promise<Task>{
 
-    //   const task = await this.getTaskById(id)
+      const task = await this.getTaskById(id, user)
       
-    //   task.status = status
+      task.status = status
 
-    //   await task.save()
+      await task.save()
 
-    //   return task
-    // }
+      return task
+    }
 
   
 
